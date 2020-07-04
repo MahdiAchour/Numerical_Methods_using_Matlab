@@ -1,0 +1,12 @@
+function I=Simpson(a,b,n)
+h=(b-a)/n;
+x=[a:h:b];
+f=3*x.^2+2*x;
+I=f(1)+f(n+1);
+for i=2:2:n
+I=I+4*f(i);
+end
+for i=3:2:n
+I=I+2*f(i);
+end
+I=h/3*I;
